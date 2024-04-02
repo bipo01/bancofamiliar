@@ -10,7 +10,7 @@ let data;
 let accounts;
 
 async function getData() {
-    const response = await fetch("http://localhost:3000/");
+    const response = await fetch("https://bancofamiliarapi.vercel.app/");
     data = await response.json();
 
     console.log(data);
@@ -146,7 +146,7 @@ function init() {
 
         if (inputTransferAmount.value) {
             const response = await fetch(
-                `http://localhost:3000/movement?id=${currentAccount.id}&mov=${inputTransferAmount.value}&dataatual=${dataAtual}`
+                `https://bancofamiliarapi.vercel.app/movement?id=${currentAccount.id}&mov=${inputTransferAmount.value}&dataatual=${dataAtual}`
             );
             const data = await response.json();
 
@@ -171,7 +171,7 @@ function init() {
 
         if (inputClosePin.value) {
             const response = await fetch(
-                `http://localhost:3000/movement?id=${currentAccount.id}&mov=-${inputClosePin.value}&dataatual=${dataAtual}`
+                `https://bancofamiliarapi.vercel.app/movement?id=${currentAccount.id}&mov=-${inputClosePin.value}&dataatual=${dataAtual}`
             );
             const data = await response.json();
             console.log(data);
@@ -192,7 +192,7 @@ function init() {
             currentAccount.password === inputFecharContaPin.value
         ) {
             const response = await fetch(
-                `http://localhost:3000/deletar?id=${currentAccount.id}`
+                `https://bancofamiliarapi.vercel.app/deletar?id=${currentAccount.id}`
             );
             const data = await response.json();
 

@@ -1,7 +1,7 @@
 async function register(e) {
     e.preventDefault();
 
-    const response = await fetch("http://localhost:3000/");
+    const response = await fetch("https://bancofamiliarapi.vercel.app/");
     const data = await response.json();
 
     const nome = inputRegisterNome.value
@@ -27,7 +27,7 @@ async function register(e) {
         inputRegisterConfirmPin.value = "";
 
         const response = await fetch(
-            `http://localhost:3000/add?owner=${nome}&username=${username}&password=${pin}`
+            `https://bancofamiliarapi.vercel.app/add?owner=${nome}&username=${username}&password=${pin}`
         );
 
         const data = await response.json();
